@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Gallery</title>
+  <style>
+    /* Styles from the CSS artifact */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav li {
+      margin-right: 1rem;
+    }
+    
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .video-gallery {
+      padding: 2rem;
+    }
+    
+    .video-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 2rem;
+    }
+    
+    .video-item {
+      text-align: center;
+    }
+    
+    .video-item video {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+    }
+
+    h1{
+        color: #fff;
+        font-size: 26px;
+        font-family: cursive;
+    }
+    
+    h1:hover{
+    color: yellow;
+    font-size: 28px;
+    border-color: #fff ;
+    transition: 0.5s;
+    
+    }
+
+
+
+    h3{
+        color: bisque;
+        font-size: 28px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    p{
+
+        color: beige;
+        font-size: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    p:hover{
+        color: red;
+        font-size: 24px;
+        transition: 0.5s;
+    }
+
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+    
+    @media (max-width: 768px) {
+      .video-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        
+        <li><a href="#">Videos</a></li>
+       
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="video-gallery">
+      <h1>Video Gallery</h1>
+      <div class="video-container">
+        <div class="video-item">
+          <video controls>
+            <source src="video/SaveClip.App_9F4DDFDF9B7E5C79676A2BD6BDE157A9_video_dashinit.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <h3>Video 1</h3>
+          <p>Venha fazer uma aula experimental</p>
+        </div>
+
+
+        <div class="video-item">
+          <video controls>
+            <source src="video/SaveClip.App_2F4552317A8762F879C45EA6C3C82E9C_video_dashinit.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <h3>Video 2</h3>
+          <p>Arena Jiu-Jitsu</p>
+        </div>
+
+
+        <div class="video-item">
+            <video controls>
+              <source src="video/SaveClip.App_EE440D78E214959121C537A8D8C869A1_video_dashinit.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <h3>Video 3</h3>
+            <p>O chão é o nosso Mundo</p>
+          </div>
+
+          <div class="video-item">
+            <video controls>
+              <source src="video/SaveClip.App_F142C719695B0103D93A79BC07CAF689_video_dashinit (1).mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <h3>Video 4</h3>
+            <p>Conheça a Arte Suave</p>
+          </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024  Video Gallery  Jonatha Lopes. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // JavaScript code from the JavaScript artifact
+    const videoElements = document.querySelectorAll('.video-item video');
+
+    videoElements.forEach((video) => {
+      video.addEventListener('play', () => {
+        videoElements.forEach((otherVideo) => {
+          if (otherVideo !== video) {
+            otherVideo.pause();
+          }
+        });
+      });
+
+      video.addEventListener('pause', () => {
+        // Do nothing, allow the video to remain paused
+      });
+    });
+  </script>
+</body>
+</html>
